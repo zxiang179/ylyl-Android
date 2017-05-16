@@ -1,0 +1,76 @@
+<div>
+
+    <header>
+        <div class="col-xs-12 page-top-prac">
+            <a href="#" id="return">
+                <i class="fa fa-chevron-left icon-return pull-left"></i>
+            </a>
+            <span class="page-now">{{pkwaiting.moduleTitle}}</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <table class="table table-bordered" style="table-layout: fixed; text-align:center">
+            <tr>
+                <td rowspan="4">
+                    <img ng-src="{{pkwaiting.userData.avatar}}" alt="头像" class=" img-responsive img-rounded">
+                </td>
+                <td>
+                    {{pkwaiting.userData.name}}
+                </td>
+                <td rowspan="4">
+                    <img ng-src="{{pkwaiting.oppoData.avatar}}" alt="头像" class=" img-responsive img-rounded">
+                </td>
+                <td ng-show="pkwaiting.infoBox">
+                    {{pkwaiting.oppoData.name}}
+                </td>
+                <td ng-show=" ! pkwaiting.infoBox" rowspan="4" style="display:table-cell; vertical-align:middle;">
+                    等待中...
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                     {{pkwaiting.userData.school}}
+                 </td>
+                 <td ng-show="pkwaiting.infoBox">
+                     {{pkwaiting.oppoData.school}}
+                 </td>
+            </tr>
+            <tr>
+                <td>
+                    {{pkwaiting.userData.grade}}
+                </td>
+                <td ng-show="pkwaiting.infoBox">
+                    {{pkwaiting.oppoData.grade}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    胜率:{{pkwaiting.userData.pkRate}}
+                </td>
+                <td ng-show="pkwaiting.infoBox">
+                    胜率:{{pkwaiting.oppoData.pkRate}}
+                </td>
+            </tr>
+        </table>
+
+        <div class="examTime">
+            <div class="row delRowMargin">
+                <div class="col-xs-4 col-xs-offset-4">
+                    <div class="practice-time">
+                        <i class="fa fa-clock-o"></i>
+                        {{pkwaiting.waitingTimeText}}{{pkwaiting.waitingTime | date:'mm:ss'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-row" align="center">
+            <button type="button" class="btn btn-default course-test-btn"
+                    ng-disabled=pkwaiting.waitingButtonBox
+                    ng-click="pkwaiting.startMatching()">
+                {{pkwaiting.waitingButtonText}}
+            </button>
+        </div>
+    </div>
+
+</div>

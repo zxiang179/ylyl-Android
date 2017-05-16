@@ -1,0 +1,93 @@
+
+
+<link rel="stylesheet" type="text/css" href="../../style/css/login-reg.css"/>
+<style type="text/css">
+    body{
+        background: url(../../style/images/u7.jpg);
+        -moz-background-size: 100%; /* 老版本的 Firefox */
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+<div class="mask">
+    <div class="logo">
+        <img src="../../style/images/u46.png"/>
+    </div>
+    <div class="tab-content">
+        <div class="panel panel-default reg-model  tab-pane fade  active in" id="fom-register">
+            <div class="panel-heading">
+                <h3 class="panel-title">注册</h3>
+            </div>
+            <div class="panel-body">
+                <form  class="form-horizontal" role="form" name="signForm" ng-submit="userSignCtrl.sendUserSignMsg()"  novalidate>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <span>+86 |</span>
+                            <input type="text" class="form-control phone-num" name="phoneNum" placeholder="手机号码"  required
+                                   ng-model='userSignCtrl.user.phoneNum' ng-pattern="/^1[34578]\d{9}$/"  ng-focus="userSignCtrl.isShowPhone=false" ng-blur="userSignCtrl.isShowPhone=true"/> <!--ng-focus="userSignCtrl.changeState()">   ng-focus="userSignCtrl.isShow=false" ng-blur="userSignCtrl.isShow=true"-->
+                        </div>
+                        <div class="warning col-xs-12" ng-show="signForm.phoneNum.$dirty && signForm.phoneNum.$invalid && userSignCtrl.isShowPhone==true"><!--/*userSignCtrl.isShow==true*/-->
+                            <div  ng-show="signForm.phoneNum.$error.required">请输入手机号！</div>
+                            <div  ng-show="signForm.phoneNum.$error.pattern">手机号格式不正确！</div>
+                        </div>
+                        <div class="warning col-xs-12" ng-if="userSignCtrl.userExist&&userSignCtrl.isShowPhone==true ">该手机号已注册！</div>
+                        <!--<div class="warning col-xs-12" ng-if="userSignCtrl.phoneInvalid ">手机号输入格式不正确</div>-->
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="text" class="form-control" id="identi-code" placeholder="验证码" >
+                        </div>
+                        <a href="##" type="button" class="btn get-code-btn">获取验证码</a>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="password" name="password" class="form-control" id="passWord" placeholder="输入密码" ng-model='userSignCtrl.user.password' minlength="6" maxlength="20"
+                                   ng-focus="userSignCtrl.isShowPass=false" ng-blur="userSignCtrl.isShowPass=true" required>
+                            <!--ng-focus="userSignCtrl.changeState()">     -->
+                        </div>
+                        <div class="warning col-xs-12" ng-show="signForm.password.$dirty && signForm.password.$invalid && userSignCtrl.isShowPass==true"><!--userSignCtrl.isShow==true-->
+                            <div  ng-show="signForm.password.$error.required">请输入密码！</div>
+                            <div  ng-show="signForm.password.$error.minlength">密码必须大于6位</div>
+                        </div>
+
+                        <!-- <div class="warning col-xs-12" ng-if="userSignCtrl.passwordNull ">密码不能为空！</div>
+                         <div class="warning col-xs-12" ng-if="userSignCtrl.passwordInvalid ">密码长度小于6位！</div>-->
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="password" class="form-control" name="rePassword" placeholder="确认密码" ng-model='userSignCtrl.user.rePassword'
+                                   ng-focus="userSignCtrl.isShowRePass=false"  ng-blur="userSignCtrl.checkPass();userSignCtrl.isShowRePass=true"  required>  <!--  ng-focus="userSignCtrl.changeState()"-->
+                        </div>
+                        <div class="warning col-xs-12" ng-show="signForm.rePassword.$dirty && signForm.rePassword.$invalid && userSignCtrl.isShowRePass==true"><!--userSignCtrl.isShow==true-->
+                            <div  ng-show="signForm.rePassword.$error.required">请再次输入密码！</div>
+
+                        </div>
+                        <div class="warning col-xs-12" ng-show="userSignCtrl.passwordError&&userSignCtrl.isShowRePass==true">两次密码输入不一致！</div><!--userSignCtrl.isShow==true-->
+
+
+                        <!-- <div class="warning col-xs-12" ng-if="userSignCtrl.passwordError ">两次密码输入不一致！</div>
+                         -->
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+
+                            <button type="submit" class="btn btn-primary col-xs-12 reg-btn" ng-disabled="signForm.$invalid"  >
+                                注册
+                            </button><!--ng-click="userSignCtrl.sendUserSignMsg()"-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-6 active">
+                            <a href="#/user" id="return-login">返回</a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

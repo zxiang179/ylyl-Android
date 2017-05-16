@@ -1,0 +1,26 @@
+[{
+  "id": "yw",
+  "name": "语文",
+  "icon": "http://localhost:63342/12.1/src/pic/1.jpg"
+}, {
+  "id": "sx",
+  "name": "数学",
+  "icon": "http://localhost:63342/12.1/src/pic/2.jpg"
+}, {
+  "id": "ls",
+  "name": "历史",
+  "icon": "http://localhost:63342/12.1/src/pic/3.jpg"
+}, {
+  "id": "zz",
+  "name": "政治",
+  "icon": "http://localhost:63342/12.1/src/pic/4.jpg"
+}, {
+  "id": "dl",
+  "name": "地理",
+  "icon": "http://localhost:63342/12.1/src/pic/5.jpg"
+}, {
+  "id": "sw",
+  "name": "生物",
+  "icon": "http://localhost:63342/12.1/src/pic/6.jpg"
+}]
+

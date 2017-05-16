@@ -1,0 +1,33 @@
+[{
+  "id": 10,
+  "loName":"黄浦区",
+  "isChose":false,
+  "school":[{
+  "schoolId":1001,
+  "schoolName":"黄浦中学",
+  "isSchool":false},
+    { "schoolId":1002,
+    "schoolName":"汾阳中学",
+    "isSchool":false}]
+},
+  {
+    "id": 11,
+    "loName": "徐汇区",
+    "isChose": false,
+    "school": [{
+        "schoolId": 1102,
+        "schoolName": "上海中学",
+        "isSchool": false
+      },
+      {"schoolId": 1101,
+        "schoolName": "徐汇中学",
+        "isSchool": false}]
+  },
+  {
+  "id": 12,
+  "loName":"普陀区",
+  "isChose":false,
+    "school": [{"schoolId":1201,
+  "schoolName":"普陀中学",
+  "isSchool":false}]
+}]

@@ -1,0 +1,137 @@
+<div class="container-fluid form-horizontal">
+
+    <div class="form-group" >
+        <label>
+            所属年级
+            <select class="form-control" data-ng-model="tmquesubmit.selectedGrade" ng-change="tmquesubmit.selectGrade()">
+                <option ng-repeat="item in tmquesubmit.gradeList" value={{item.id}}>{{item.name}}</option>
+            </select>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            所属课程
+            <select class="form-control" data-ng-model="tmquesubmit.selectedSubject" ng-change="tmquesubmit.selectSubject()">
+                <option ng-repeat="item in tmquesubmit.subjectList" value={{item.id}}>{{item.name}}</option>
+            </select>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            所属知识点
+            <select class="form-control" data-ng-model="tmquesubmit.selectedKnPoint">
+                <option  ng-repeat="item in tmquesubmit.knPointList" value={{item.id}}>{{item.name}}</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>
+            题目内容
+        </label>
+        <textarea class="form-control" rows="3"  placeholder="题目内容" data-ng-model="tmquesubmit.questionContent"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>
+            题型
+            <select class="form-control" data-ng-model="tmquesubmit.questionType" ng-change="tmquesubmit.showAnswerBox()">
+                <option value=0>单选</option>
+                <option value=1>多选</option>
+                <option value=2>填空</option>
+                <option value=3>简答</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>
+            答案
+        </label>
+
+        <!--单选题-->
+        <div ng-style="tmquesubmit.answerBox[0]">
+            <div class="radio">
+                <label ng-cloak>
+                    <input type="radio" value=1 ng-model="tmquesubmit.questionAnswer">
+                    <input type="text" class="form-control" placeholder="A选项" data-ng-model="tmquesubmit.questionOption[0]">
+                </label>
+            </div>
+            <div class="radio">
+                <label ng-cloak>
+                    <input type="radio" value=2 ng-model="tmquesubmit.questionAnswer">
+                    <input type="text" class="form-control" placeholder="B选项" data-ng-model="tmquesubmit.questionOption[1]">
+                </label>
+            </div>
+            <div class="radio">
+                <label ng-cloak>
+                    <input type="radio" value=3 ng-model="tmquesubmit.questionAnswer">
+                    <input type="text" class="form-control" placeholder="C选项" data-ng-model="tmquesubmit.questionOption[2]">
+                </label>
+            </div>
+            <div class="radio">
+                <label ng-cloak>
+                    <input type="radio" value=4 ng-model="tmquesubmit.questionAnswer">
+                    <input type="text" class="form-control" placeholder="D选项" data-ng-model="tmquesubmit.questionOption[3]">
+                </label>
+            </div>
+        </div>
+
+        <!--多选题-->
+        <div ng-style="tmquesubmit.answerBox[1]">
+            <div class="checkbox">
+                <label ng-cloak>
+                    <input type="checkbox" ng-model="tmquesubmit.questionAnswer[0]">
+                    <input type="text" class="form-control" placeholder="A选项" data-ng-model="tmquesubmit.questionOption[0]">
+                </label>
+            </div>
+            <div class="checkbox">
+                <label ng-cloak>
+                    <input type="checkbox" ng-model="tmquesubmit.questionAnswer[1]">
+                    <input type="text" class="form-control" placeholder="B选项" data-ng-model="tmquesubmit.questionOption[1]">
+                </label>
+            </div>
+            <div class="checkbox">
+                <label ng-cloak>
+                    <input type="checkbox" ng-model="tmquesubmit.questionAnswer[2]">
+                    <input type="text" class="form-control" placeholder="C选项" data-ng-model="tmquesubmit.questionOption[2]">
+                </label>
+            </div>
+            <div class="checkbox">
+                <label ng-cloak>
+                    <input type="checkbox" ng-model="tmquesubmit.questionAnswer[3]">
+                    <input type="text" class="form-control" placeholder="D选项" data-ng-model="tmquesubmit.questionOption[3]">
+                </label>
+            </div>
+        </div>
+
+        <!--填空题-->
+        <div ng-style="tmquesubmit.answerBox[2]">
+            <input type="text" class="form-control" placeholder="填空答案" data-ng-model="tmquesubmit.questionAnswer">
+        </div>
+
+        <!--简答题-->
+        <div ng-style="tmquesubmit.answerBox[3]">
+            <textarea class="form-control" rows="3" placeholder="简答答案" data-ng-model="tmquesubmit.questionAnswer"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label ng-click="tmquesubmit.test()">
+            题目解析
+        </label>
+        <textarea class="form-control" rows="3" placeholder="题目解析" data-ng-model="tmquesubmit.questionAnalyse"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>
+            题目标签
+        </label>
+        <textarea class="form-control" rows="3" placeholder="题目解析" data-ng-model="tmquesubmit.questionTabs"></textarea>
+    </div>
+    <div>
+        <button class="btn btn-primary" ng-click="tmquesubmit.sendQuestion()">提交</button>
+    </div>
+</div>
+
+

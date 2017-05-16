@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>PK</title>
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../lib/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="../../style/css/pk.css">
+</head>
+
+<body ng-app="ykylPkApp">
+    <div ng-view></div>
+</body>
+
+<script src="../../lib/angular/angular.min.js"></script>
+<script src="../../lib/angular-route/angular-route.min.js"></script>
+<script src="../../lib/angular-loading-bar/build/loading-bar.js"></script>
+<script src="../../lib/angular-animate/angular-animate.min.js"></script>
+<script src="../../lib/angular-lazyload/dist/lazyload.js"></script>
+<script src="../../lib/angular-websocket/dist/angular-websocket.js"></script>
+<script src="../../lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+
+<script src="pk-home.app.js"></script>
+<script src="pk-menu.ctrl.js"></script>
+<script src="pk-waiting.ctrl.js"></script>
+<script src="pk-page.ctrl.js"></script>
+
+
+<script src="../../common/common.app.js"></script>
+<script src="../../common/service/connection.ser.js"></script>
+<script src="../../common/service/utils.ser.js"></script>
+<script src="../dao/pk/pk-menu-dao.ser.js"></script>
+<script src="../dao/pk/pk-waiting-dao.ser.js"></script>
+<script src="../dao/pk/pk-page-dao.ser.js"></script>
+<script src="../dao/pk/pk-result-dao.ser.js"></script>
+<script src="../dao/pk/pk-websocket-dao.ser.js"></script>
+
+
+</html>

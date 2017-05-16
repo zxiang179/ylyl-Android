@@ -1,0 +1,79 @@
+<div class="tab-content">
+<!-- 城区 -->
+
+    <header>
+        <div class="row delRowMargin">
+            <div class="col-xs-12 page-top-ques">
+                <div ng-click="userSchoolInfoCtrl.returnPath()" id="return">
+                    <i class="fa fa-chevron-left icon-return pull-left"></i>
+                </div>
+                <span class="page-now">学校</span>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content-page">
+            <div class="selfInfo-Related">
+                <div class="list-group">
+                    <div  ng-click="userSchoolInfoCtrl.isShow(district.id)"
+                       ng-repeat="district in userSchoolInfoCtrl.districtList">
+                        <div class="list-group-item">{{district.loName}}
+                         <div class="myInfo-edit pull-right">
+                            <i class="fa fa-angle-down" ng-hide="district.isChose"></i>
+                            <i class="fa fa-angle-up" ng-show="district.isChose"></i>
+                         </div>
+                        </div>
+                        <div   style="display: block" class=" list-group-item-heading school-list" ng-repeat="school in district.school" ng-show="district.isChose" ng-click="userSchoolInfoCtrl.saveSchool(district.id, school.schoolId,school.schoolName)" >
+                            {{school.schoolName}}
+                            <span class=" glyphicon glyphicon-ok"  ng-show="school.isSchool"></span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!--&lt;!&ndash; 学校 &ndash;&gt;
+    <div class="tab-pane" id="urbAreaSchool">
+        <header>
+            <div class="row delRowMargin">
+                <div class="col-xs-12 page-top-ques">
+                    <a href="#urbanArea" id="urbanArea-return">
+                        <i class="fa fa-chevron-left icon-return pull-left"></i>
+                    </a>
+                    <span class="page-now">学校</span>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="content-page">
+                <div class="selfInfo-Related">
+                    <div class="list-group">
+                        <a href="#/userInfo" class="list-group-item" ng-repeat="school in district.school"
+                           ng-click="userSchoolInfoCtrl.saveSchool(district.id, school.schoolId,school.schoolName)">市一种学
+                            <div class="myInfo-edit pull-right">
+                            </div>
+                        </a>
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>-->
+<!--
+<script type="text/javascript" src="../lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        $('#urbanArea a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+        $('#urbanArea-return').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+    });
+</script>-->

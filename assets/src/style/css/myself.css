@@ -1,0 +1,385 @@
+body{
+	background-color: #F1F1F1;
+}
+/* myself page css */
+header{
+	position: fixed;
+	z-index: 5;
+	width: 100%;
+	background-color: rgba(45, 91, 227, 1);
+}
+.container{
+	width: 100%;
+	padding: 0;
+}
+.delRowMargin{
+	margin: 0;
+}
+.delPadd{
+	padding: 0;
+}
+.delPaddLeft{
+	padding-left: 0;
+}
+.delPaddRight{
+	padding-right: 0;
+}
+.page-top,.page-top-ques{
+	text-align: center;
+	padding: 8px 15px;
+	color: white;
+}
+.page-top span{
+	margin-left: -15px;
+}
+.icon-return{
+	font-size: 16px;
+	color: white;
+	margin-top: 3px;
+	margin-right: 0 !important;
+}
+[data-dpr="2"] .icon-return {
+  font-size: 32px;
+}
+[data-dpr="3"] .icon-return {
+  font-size: 48px;
+}
+.img-myself{
+	width: 65px;
+	height: 65px;
+	padding: 6px;
+	margin-left: -6px;
+	border-radius: 100%;
+}
+.img-myself img{
+	height: 100%;
+	width: 100%;
+	border-radius: 100%;
+}
+.myself-info-state{
+	padding-top: 10px;
+	height: 100%;
+	width: 100%;
+	color: white;
+}
+.my-userName{
+	font-size: 14px;
+}
+[data-dpr="2"] .my-userName {
+  font-size: 28px;
+}
+[data-dpr="2"] .my-userName {
+  font-size: 42px;
+}
+
+#my-leval{
+	color: orangered;
+}
+.my-userId{
+	margin-top: 2px;
+}
+.icon-next{
+	height: 65px;
+  padding: 5%;
+  padding-top: 7%;
+  color: white;
+  text-align: center;
+}
+.icon-next a{
+	color: white;
+}
+a.sendBtn:focus, a.sendBtn:hover {
+    color: white;
+    text-decoration: none;
+}
+/* content */
+.content{
+	background-color: #F1F1F1;
+	padding-top: 2%; 
+	margin-top: 101px;
+	/*margin-bottom: 45px;*/
+}
+.content-page{
+	background-color: #F1F1F1;
+	padding-top: 4%; 
+	margin-top: 36px;
+}
+.list-group{
+	padding-left: 15px;
+	margin-bottom: 2%; 
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+.list-group-item>.badge{
+	margin-right: 15px;
+}
+.list-group .list-group-item{
+	border-radius: 0;
+	padding: 3% 0;
+	font-size: 12px;
+	margin-bottom: 0;
+	border: none;
+	border-bottom: 1px solid #ddd;
+}
+.myInfo-list{
+	position: relative;
+	border: none;
+      right: -40%;
+
+	/*width: 80%;*/
+}
+.school-list{
+	border-radius: 0;
+	padding: 3% 0 3% 5%;
+	font-size: 10px;
+	margin-bottom: 0;
+	border: none;
+	border-bottom: 1px solid #ddd;
+}
+[data-dpr="2"] .list-group .list-group-item {
+  font-size: 24px;
+}
+[data-dpr="3"] .list-group .list-group-item {
+  font-size: 36px;
+}
+.list-group-item:last-child{
+	border-bottom: none;
+}
+.question-Related, .myInfo-Related, .app-Related, .selfInfo-Related{
+	background-color: white;
+}
+a.list-group-item:focus, a.list-group-item:hover{
+  text-decoration: none;
+  background-color: white;
+}
+i.fa-angle-right {
+  margin-left: 5px;
+}
+.app-extension{
+	width: 100%;
+}
+.img-container{
+	padding: 5% 38%;
+}
+.img-container img{
+	width: 100%;
+	height: auto;
+}
+.extension-text{
+	font-size: 12px;
+	text-align: center;
+	transform: translate(0,-55px);
+	-ms-transform: translate(0,-55px); /* IE 9 */
+	-webkit-transform: translate(0,-55px); /* Safari and Chrome */
+}
+.extension-text span{
+	background-color: white;	
+}
+[data-dpr="2"] .extension-text {
+  font-size: 24px;
+}
+[data-dpr="3"] .extension-text {
+  font-size: 36px;
+}
+.footer{
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	padding: 0;
+}
+.exit-btn{
+	width: 100%;
+	margin-top: 5px;
+	padding: 10px 0;
+	text-align: center;
+	color: white;
+	border-radius: 5px;
+	background-color: #dedbdb;
+}
+/* myself page css */
+
+/* selfInfo page css */
+.my-pic{
+	padding-top: 10%;
+}
+.myInfo-edit{
+	padding: 0 15px;
+	color: grey;
+}
+/* selfInfo page css */
+.app-feadback{
+	margin-top: -5px;;
+	padding: 0 10px;
+}
+.app-feadback textarea{
+	width: 100%;
+	min-height: 150px;
+	overflow: visible;
+	border: none;
+	resize: none;
+}
+.sendBtn{
+	color: white;
+}
+.infoEdit .list-group{
+	padding-left: 0;
+}
+.infoEdit .list-group input, .sex-text, .grade-text{
+	padding-left: 15px;
+	border: none;
+	border-radius: 0;
+}
+.infoEdit .list-group .list-group-item{
+	padding-top: 0;
+	padding-bottom: 1px;
+	border-bottom: none;
+}
+.infoEdit .list-group .myInfo-edit, 
+.infoEdit .list-group .myInfoSex-edit,
+.infoEdit .list-group .myInfoGrade-edit{
+	padding: 5px 15px;
+	position: absolute;
+	z-index: 5;
+	right: 0;
+  bottom: 10%;
+}
+.myInfoSex-edit, .myInfoGrade-edit{
+
+}
+.warning{
+	color: red;
+	left: 3%;
+	position: relative;
+	font-size: 14px;
+}
+
+.img-model-mask{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 6;
+
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.2);
+}
+.img-model{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+.img-model .list-group-item{
+	border: none;
+	text-align: center;
+}
+.img-model .list-group-item:nth-child(2){
+	margin-bottom: 5px;
+	border-top: 1px solid #ddd;
+}
+
+.thumbnail{
+	position: relative;
+	border: none;
+	margin-bottom: 0;
+	border-radius: 0;
+}
+.thumbnail input{
+	position: absolute;
+	top: 3px;
+	right: 5px;
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+}
+.thumbnail img{
+	/*max-width: 100%;*/
+	height: 100%;
+}
+.img-camara{
+	padding: 20%;
+}
+
+/* 头像设置 */
+.img-mask{
+
+	position:fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%; 
+	background-color: rgba(0,0,0,.6);
+}
+.img-photo-wrap{
+	opacity: 0;
+	position: relative;
+	left: 5%;
+	top: 25%;
+	width: 90%;
+	padding: 5px;
+	background-color: white;
+	height: auto;
+}
+.img-photo-wrap img{
+	width: 100%;
+	height: auto;
+	max-height: 60%;
+	cursor: pointer;
+}
+/* 针对320px以下设备作适应 */
+@media screen and (max-width:321px){
+	
+  .app-Related .list-group{
+		margin-bottom: 5px;
+	}
+	.extension-text{
+		transform: translate(0,-45px);
+		-ms-transform: translate(0,-45px); /* IE 9 */
+		-webkit-transform: translate(0,-45px); /* Safari and Chrome */
+	}
+	/* myself page css */
+}
+
+/* 针对ipad设备作适应 */
+@media screen and (min-width:415px){
+	/* myself page css */
+	header{
+		padding: 0 2%;
+	}
+	.content {
+    padding-top: 2%;
+    margin-top: 128px;
+	}
+	.content-page{
+		padding-top: 2%; 
+	}
+	.list-group{
+		padding-left: 5%;
+		margin-bottom: 2%;
+	}
+	.img-myself{
+		width: 90px;
+		height: 90px;
+	}
+	.my-pic {
+    padding-top: 8%;
+	}
+	.content, .content-page {
+    padding-top: 6%;
+	}
+	header{
+		padding: 2%;
+	}
+	.infoEdit .list-group input{
+		padding-left: 5%;
+	}
+	.myInfo-edit{
+		position: relative;
+		width: 30%;
+	}
+	.myInfo-edit, .myInfoSex-edit, .myInfoGrade-edit{
+		padding-right: 5%;
+	}
+	.icon-next{
+		padding-top: 6%;
+	}
+}

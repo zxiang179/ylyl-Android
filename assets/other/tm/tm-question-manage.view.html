@@ -1,0 +1,105 @@
+<div class="container-fluid form-horizontal">
+
+    <div class="form-group">
+        <label class="col-sm-1">
+            题目类型
+        </label>
+        <div isteven-multi-select
+             input-model="tmquesman.questionTypeList"
+             output-model="tmquesman.selectedQuestionType"
+             button-label="name"
+             item-label="name"
+             tick-property="selected"
+             disable-property="disabled"
+             max-labels="6"
+             max-height="250px"
+             helper-elements="all none">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-1">
+            年级
+        </label>
+        <div isteven-multi-select
+             input-model="tmquesman.gradeList"
+             output-model="tmquesman.selectedGrade"
+             button-label="name"
+             item-label="name"
+             tick-property="selected"
+             disable-property="disabled"
+             max-labels="6"
+             max-height="250px"
+             helper-elements="all none"
+             on-close="tmquesman.showSubjectSelect()">
+        </div>
+    </div>
+
+    <div class="form-group" ng-show="tmquesman.subjectBox">
+        <label class="col-sm-1">
+            课程
+        </label>
+        <div isteven-multi-select
+             input-model="tmquesman.projSubjectList"
+             output-model="tmquesman.selectedSubject"
+             button-label="name"
+             item-label="name"
+             tick-property="selected"
+             disable-property="disabled"
+             max-labels="6"
+             max-height="250px"
+             helper-elements="all none"
+             on-close="tmquesman.showKnPointSelect()">
+        </div>
+    </div>
+
+    <div class="form-group" ng-show="tmquesman.knPointBox">
+        <label class="col-sm-1">
+            知识点
+        </label>
+        <div isteven-multi-select
+             input-model="tmquesman.knPointList"
+             output-model="tmquesman.selectedKnPoint"
+             button-label="name"
+             item-label="name"
+             tick-property="selected"
+             max-labels="6"
+             max-height="250px"
+             disable-property="disabled">
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

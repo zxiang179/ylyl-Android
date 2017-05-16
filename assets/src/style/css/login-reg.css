@@ -1,0 +1,255 @@
+/* 用户登录-注册 */
+.delPadd{
+	padding: 0;
+}
+.mask{
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,.5);
+}
+.logo{
+	width: 80px;
+	height: 80px;
+	padding: 10px;
+	margin: 0 auto;
+	margin-top: 20%;
+}
+.logo img{
+	width: 100%;
+	height: auto;
+}
+.login-model, .reg-model{
+	position: relative;
+	margin: 10% auto;
+	width: 90%;
+	height: auto;
+	border-radius: 3px;
+	background-color: white;
+}
+.panel-heading{
+	padding: 4% 0;
+}
+.reg-model{
+	margin-top: 6%;
+}
+.panel-title{
+	text-align: center;
+	color: slategray;
+}
+.form-group label{
+	margin-top: 6px;
+  color: #424f5d;
+}
+.form-group label i{
+	font-size: 22px;
+}
+.href-reg{
+	text-align: right;
+}
+.reg-model .form-control, .selfInfo-form .form-control{
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #CCCCCC;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.reg-model .form-group{
+	position: relative;
+	z-index: 2;
+}
+.reg-model .form-group span{
+	position: absolute;
+	z-index: 3;
+	bottom: 8px;
+	left: 25px;
+	color: #5E5E5E;
+}
+.phone-num{
+	padding-left: 50px;
+}
+.get-code-btn{
+	position: absolute;
+	z-index: 3;
+	bottom: 3px;
+	right: 15px;
+	color: white;
+	background-color: gray;
+}
+.get-code-btn:hover{
+	color: white;
+}
+.reg-btn{
+	margin: 15px 0;
+
+}
+.else-login{
+	position: absolute;
+	z-index: -1;
+	bottom: 2%;
+	left: 5%;
+	width: 90%;
+}
+.else-login-title{
+	margin: 0;
+	text-align: center;
+	color: whitesmoke;
+	transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%); /* IE 9 */
+	-webkit-transform: translate(0,-50%); /* Safari and Chrome */
+}
+.top-border{
+	border-top: 1px solid whitesmoke;
+}
+.else-login-img{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+.else-login-img img{
+	width: 100%;
+	height: auto;
+}
+.warning{
+	color: red;
+}
+
+
+/* 个人信息完善 */
+div>header{
+	top:0;
+	position: fixed;
+	z-index: 9;
+	width: 100%;
+	background-color: rgba(45, 91, 227, 1);
+}
+.page-top-reg{
+	text-align: center;
+	padding: 8px 15px;
+	color: white;
+}
+.icon-return{
+	font-size: 16px;
+	color: white;
+	margin-top: 3px;
+	margin-right: 0 !important;
+}
+[data-dpr="2"] .icon-return {
+  font-size: 32px;
+}
+[data-dpr="3"] .icon-return {
+  font-size: 48px;
+}
+.content{
+	padding: 10% 15px;
+}
+.label-backcolor{
+	display: block;
+	width: 100%;
+}
+.school-set{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #504e4e;
+}
+.radio-btn-group{
+	margin-left: -5px; 
+	margin-right: -5px;
+}
+
+.radio-btn{
+	padding: 0 5px;
+}
+.radio-select{
+	position: relative;
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+	font-size: 12px;
+	color: #504e4e;
+	background-color: #eaeaea;
+}
+[data-dpr="2"] .radio-select {
+  font-size: 24px;
+}
+[data-dpr="3"] .radio-select {
+  font-size: 36px;
+}
+.radio-select input{
+	position: absolute;
+	z-index: 2;
+  opacity: 0;
+ }
+.radio-select div{
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.sex-male, .sex-female{
+	text-align: center;
+} 
+/*.radio-active{
+	color: white;
+	background-color: #03c0d8;
+}*/
+.selected{
+	color: white;
+	background-color: #03c0d8;
+}
+.sex-male{
+	width: 100%;
+	padding-left: 0;
+	padding-right: 10px;
+}
+.sex-female{
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 0;
+}
+/*.form-horizontal .form-group:nth-child(3){
+	margin-bottom: 30px;
+}*/
+.btn-begin{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+.btn-begin a{
+	padding: 2% 0;
+	border-radius: 0;
+	color: #fff;
+  background-color: #03c0d8;
+  border-color: #03c0d8;
+}
+.btn-begin a:hover, .btn-begin a:active, .btn-begin a:focus{
+	color: white;
+	outline: none;
+  outline-offset: none;
+}
+.btn-col{
+    background-color: #03c0d8;
+    color: #ffffff;
+}
+/* 个人信息完善 */
+/* 学校设置 */
+@media screen and (max-width:321px){
+	/* 屏幕小于321px */
+	
+}
+@media screen and (min-width:415px){
+	/* 屏幕大于415px-iPad */
+	header{
+		padding: 2% 2%;
+	}
+	.label-backcolor{
+		margin-bottom: 15PX;
+	}
+	
+}

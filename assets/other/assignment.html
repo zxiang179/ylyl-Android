@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>交卷</title>
+	<link rel="stylesheet" href="../src/lib/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../src/lib/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../src/lib/swiper/dist/css/swiper.min.css">
+	<link rel="stylesheet" href="../src/style/css/practice.css">
+</head>
+<body>
+	<header >
+    <div class="col-xs-12 page-top-prac">
+    	<a href="selfInfo.html" id="return">
+        <i class="fa fa-chevron-left icon-return pull-left"></i>  
+			</a>
+			<span class="page-now">代数式的值</span>
+    </div>
+	</header>
+	
+	<div class="content">
+		<div class="ques-wrapper">
+			
+			<!-- Pie Chart Start -->
+			<div id="practice-result" style="width: 100%;min-height:200px; padding: 8px;"></div>
+			<!-- Pie Chart End -->	
+			
+			<!-- Correct Rate Start -->
+			<div class="result-text">
+				<h5>正确率</h5>
+				<p>78.57%</p>
+			</div>
+			<!-- Correct Rate End-->
+			
+			<!-- Time&Level Start -->
+			<div class="time-difficultLevel">
+				<div class="row delRowMargin">
+					<div class="col-xs-6">
+						<div class="practice-time">
+							<i class="fa fa-clock-o"></i>
+							10:54
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="practice-level">
+							难易程度：较低
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Time&Level End -->
+		</div>
+		
+		<!-- Error Parsing Start -->
+		<div class="error-parsing">
+			<h6>错题解析</h6>
+			<div class="row delRowMargin">
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >1</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No ques-error">
+						<a href="##" >2</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >3</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >4</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No ques-error">
+						<a href="##" >5</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >6</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >7</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >8</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >9</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No ques-error">
+						<a href="##" >10</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >11</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >12</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >13</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >14</a>
+					</div>
+				</div>
+				<div class="col-xs-2 ques-No-wrap">
+					<div class="ques-No">
+						<a href="##" >15</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Error Parsing End -->
+		
+		<!-- Notify Message Start -->
+		<div class="dialog">
+			<div class="row delRowMargin">
+				<div class="col-xs-3">
+					<i class="fa fa-bullhorn"></i>
+				</div>
+				<div class="col-xs-9">
+					<p>距离下一题还有100题</p>
+					<p>为民立中学贡献0.3分</p>
+				</div>
+			</div>
+		</div>
+		<!-- Notify Message End -->
+	</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/echarts.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function () {
+		//定时6000ms关闭dialog
+		$('.dialog').fadeIn(6000).animate({
+			opacity: '0',
+			top: '0',
+			right: '0'},1000);
+		
+		//初始化echarts实例
+		var myChart = echarts.init(document.getElementById('practice-result'));
+		// 指定图表的配置项和数据
+		option = {
+	    tooltip: {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b}: {c} ({d}%)"
+	    },
+	    series: [
+	        {
+	            name:'代数式的值',
+	            type:'pie',
+	            radius: ['50%', '70%'],
+	            avoidLabelOverlap: false,
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'center'
+	                },
+	                emphasis: {
+	                    show: false,
+	                    textStyle: {
+	                        fontSize: '20',
+	                        fontWeight: 'bold'
+	                    }
+	                },
+	            },
+	            labelLine: {
+	                normal: {
+	                    show: false
+	                }
+	            },
+	            startAngle: 125,
+	            data:[
+	                {
+	                	value:3, 
+	                	name:'错误率',
+	                	itemStyle: {
+	                		normal: {color: '#ddd'}}
+	                },
+	                {
+	                	value:11, 
+	                	name:'正确率',
+	                	itemStyle: {
+	        						normal: {color: 'rgb(45, 91, 227)'}}
+	                }
+	            ]
+	        }
+	    ]
+	};
+	myChart.setOption(option);
+	
+	});
+</script>
+</body>
+</html>

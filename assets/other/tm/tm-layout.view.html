@@ -1,0 +1,42 @@
+<style>
+    .test-header {
+        background-color: #6f5499;
+        background-image: linear-gradient(to bottom, #563d7c 0px, #6f5499 100%);
+        background-repeat: repeat-x;
+        color: #cdbfe3;
+        padding: 30px 15px;
+        margin: 30px;
+        position: relative;
+        text-align: center;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<div ng-controller="tmLayoutCtrl as tmlayout">
+    <!-- start of head navigate menu-->
+    <div class="row navbar-top">
+        <div class="test-header">
+            <h1 style="font-size: 60px; font-weight: bold">做题管理</h1>
+        </div>
+    </div>
+    <!-- end of head navigate menu-->
+
+
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-2">
+                <div class="bs-docs-sidebar hidden-print affix">
+                    <ul class="nav bs-docs-sidenav text-right" style="margin: 10px;">
+                        <li ng-repeat="item in tmlayout.tmMenu">
+                            <a ng-href={{item.url}} ng-bind="item.name"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="panel panel-default" ng-view style="padding: 25px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

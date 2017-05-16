@@ -1,0 +1,208 @@
+<div>
+
+    <header>
+        <div class="col-xs-12 page-top-prac">
+            <a href="#" id="return">
+                <i class="fa fa-chevron-left icon-return pull-left"></i>
+            </a>
+            <span class="page-now">{{pkpage.moduleTitle}}</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <table class="table table-bordered" style="table-layout: fixed; text-align:center">
+            <tr>
+                <td rowspan="4">
+                    <img ng-src="{{pkpage.userData.avatar}}" alt="用户头像" class=" img-responsive img-rounded">
+                </td>
+                <td>
+                    {{pkpage.userData.name}}
+                </td>
+                <td rowspan="4">
+                    <img ng-src="{{pkpage.oppoData.avatar}}" alt="对手头像" class=" img-responsive img-rounded">
+                </td>
+                <td>
+                    {{pkpage.oppoData.name}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{pkpage.userData.school}}
+                </td>
+                <td>
+                    {{pkpage.oppoData.school}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{pkpage.userData.grade}}
+                </td>
+                <td>
+                    {{pkpage.oppoData.grade}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    胜率:{{pkpage.userData.pkRate}}
+                </td>
+                <td>
+                    胜率:{{pkpage.oppoData.pkRate}}
+                </td>
+            </tr>
+        </table>
+        <div class="examTime">
+            <div class="row delRowMargin">
+                <div class="col-xs-4">
+                    <div class="practice-time">
+                        <i class="fa fa-clock-o"></i>
+                        {{pkpage.currentQuestionAbsNum}}/{{pkpage.questionCount}}
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="practice-time">
+                        <i class="fa fa-clock-o"></i>
+                        {{pkpage.pkTime | date:'mm:ss'}}
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn btn-default course-test-btn pull-right" ng-click="pkpage.submitPage()">交卷</button>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="ques">
+                    <p>{{pkpage.currentQuestionAbsNum}}.{{pkpage.currentQuestion.questionContent}}</p>
+                </div>
+                <div class="answer">
+                    <!--单选题-->
+                    <div  ng-style="pkpage.answerBox[0]">
+                        <div class="col-xs-12">
+                            <label class="select-item">
+                                <div class="select-item-No" ng-click="pkpage.jumpNextPage(1)"
+                                     ng-class="{selected:pkpage.currentAnswer === 1}">A</div>
+                                {{pkpage.currentQuestion.options[0].content}}
+                            </label>
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="select-item">
+                                <div class="select-item-No" ng-click="pkpage.jumpNextPage(2)"
+                                     ng-class="{selected:pkpage.currentAnswer === 2}">B</div>
+                                {{pkpage.currentQuestion.options[1].content}}
+                            </label>
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="select-item">
+                                <div class="select-item-No" ng-click="pkpage.jumpNextPage(3)"
+                                     ng-class="{selected:pkpage.currentAnswer === 3}">C</div>
+                                {{pkpage.currentQuestion.options[2].content}}
+                            </label>
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="select-item">
+                                <div class="select-item-No" ng-click="pkpage.jumpNextPage(4)"
+                                     ng-class="{selected:pkpage.currentAnswer === 4}">D</div>
+                                {{pkpage.currentQuestion.options[3].content}}
+                            </label>
+                        </div>
+                    </div>
+                    <!--&lt;!&ndash;多选题&ndash;&gt;-->
+                    <!--<div  ng-style="pkpage.answerBox[1]">-->
+                    <!--<div class="col-xs-12">-->
+                    <!--<label class="select-item">-->
+                    <!--<div class="select-item-No">A</div>-->
+                    <!--<input type="checkbox" name="selectItem-radio"-->
+                    <!--value="1" ng-model="pkpage.currentAnswer[0]"-->
+                    <!--style="opacity: 0;width: 0;"/>-->
+                    <!--{{pkpage.currentQuestion.options[0].content}}-->
+                    <!--</label>-->
+                    <!--</div>-->
+                    <!--<div class="col-xs-12">-->
+                    <!--<label class="select-item">-->
+                    <!--<div class="select-item-No">B</div>-->
+                    <!--<input type="checkbox" name="selectItem-radio"-->
+                    <!--value="2" ng-model="pkpage.currentAnswer[1]"-->
+                    <!--style="opacity: 0;width: 0;"/>-->
+                    <!--{{pkpage.currentQuestion.options[1].content}}-->
+                    <!--</label>-->
+                    <!--</div>-->
+                    <!--<div class="col-xs-12">-->
+                    <!--<label class="select-item">-->
+                    <!--<div class="select-item-No">C</div>-->
+                    <!--<input type="checkbox" name="selectItem-radio"-->
+                    <!--value="3" ng-model="pkpage.currentAnswer[2]"-->
+                    <!--style="opacity: 0;width: 0;"/>-->
+                    <!--{{pkpage.currentQuestion.options[2].content}}-->
+                    <!--</label>-->
+                    <!--</div>-->
+                    <!--<div class="col-xs-12">-->
+                    <!--<label class="select-item">-->
+                    <!--<div class="select-item-No">D</div>-->
+                    <!--<input type="checkbox" name="selectItem-radio"-->
+                    <!--value="4" ng-model="pkpage.currentAnswer[3]"-->
+                    <!--style="opacity: 0;width: 0;"/>-->
+                    <!--{{pkpage.currentQuestion.options[3].content}}-->
+                    <!--</label>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--填空题-->
+                    <div  ng-style="pkpage.answerBox[2]">
+                        <input type="text" class="form-control" placeholder="填空"
+                               ng-model="pkpage.currentAnswer">
+                    </div>
+                    <!--简答题-->
+                    <div ng-style="pkpage.answerBox[3]">
+                        <textarea class="form-control" rows="3" placeholder="答案"
+                                  ng-model="pkpage.currentAnswer">
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Swiper Pagination Start-->
+            <div class="swiper-pagination"></div>
+            <!-- Swiper Pagination End -->
+        </div>
+        <!--<div class="btn-row" align="center">-->
+            <!--<button type="button" class="btn btn-default course-test-btn" ng-disabled=pkpage.previousBox ng-click="pkpage.getPrevious()">向前</button>-->
+            <!--<button type="button" class="btn btn-default course-test-btn" ng-disabled=pkpage.laterBox ng-click="pkpage.jumpNextPage()">向后</button>-->
+        <!--</div>-->
+    </div>
+</div>
+
+<script type="text/ng-template" id="pk-result.view.html">
+    <div class="modal-header">
+        <h3 class="modal-title">{{pkresult.headText}}</h3>
+        <p ng-show="pkresult.contentBox">胜{{pkresult.userInfo.success}}负{{pkresult.userInfo.fail}}</p>
+        <p ng-show="pkresult.contentBox">{{pkresult.userInfo.info}}</p>
+    </div>
+    <div class="modal-body" ng-show="pkresult.contentBox">
+        <table class="table table-bordered" style="table-layout: fixed;">
+            <tr>
+                <td colspan="4">{{pkresult.userResult.name}}</td>
+                <td colspan="4">{{pkresult.oppoResult.name}}</td>
+            </tr>
+            <tr>
+                <td>答对:</td>
+                <td>{{pkresult.userResult.success}}</td>
+                <td>答错:</td>
+                <td>{{pkresult.userResult.fail}}</td>
+                <td>答对:</td>
+                <td>{{pkresult.oppoResult.success}}</td>
+                <td>答错:</td>
+                <td>{{pkresult.oppoResult.fail}}</td>
+            </tr>
+            <tr>
+                <td>用时:</td>
+                <td colspan="3">{{pkresult.userResult.time | date:'mm:ss'}}</td>
+                <td>用时:</td>
+                <td colspan="3">{{pkresult.oppoResult.time | date:'mm:ss'}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default course-test-btn"
+                ng-click="pkresult.close()">
+            关闭
+        </button>
+    </div>
+</script>

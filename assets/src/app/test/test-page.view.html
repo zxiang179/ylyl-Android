@@ -1,0 +1,125 @@
+<div>
+
+    <header>
+        <div class="col-xs-12 page-top-prac">
+            <a href="#" id="return">
+                <i class="fa fa-chevron-left icon-return pull-left"></i>
+            </a>
+            <span class="page-now">{{testpage.testTitle}}</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <!--<div class="swiper-container">-->
+            <div class="examTime">
+                <div class="row delRowMargin">
+                    <div class="col-xs-4">
+                        <div class="practice-time">
+                            <i class="fa fa-clock-o"></i>
+                            {{testpage.currentQuestionAbsNum}}/{{testpage.questionCount}}
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="practice-time">
+                            <i class="fa fa-clock-o"></i>
+                            {{testpage.testTime | date:'mm:ss'}}
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <button class="pull-right" ng-click="testpage.submitTest()">交卷</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="ques">
+                        <p>{{testpage.currentQuestionAbsNum}}.{{testpage.currentQuestion.questionContent}}</p>
+                    </div>
+                    <div class="answer">
+                        <!--单选题-->
+                        <div  ng-style="testpage.answerBox[0]">
+                            <div class="col-xs-12 select-item" ng-click="testpage.jumpNextPage(1)"
+                                 ng-class="{selected:testpage.currentAnswer === 1}">
+                                <div class="select-item-No">A</div>
+                                {{testpage.currentQuestion.options[0].content}}
+                            </div>
+                            <div class="col-xs-12 select-item" ng-click="testpage.jumpNextPage(2)"
+                                 ng-class="{selected:testpage.currentAnswer === 2}">
+                                <div class="select-item-No">B</div>
+                                {{testpage.currentQuestion.options[1].content}}
+                            </div>
+                            <div class="col-xs-12 select-item" ng-click="testpage.jumpNextPage(3)"
+                                 ng-class="{selected:testpage.currentAnswer === 3}">
+                                <div class="select-item-No">C</div>
+                                {{testpage.currentQuestion.options[2].content}}
+                            </div>
+                            <div class="col-xs-12 select-item" ng-click="testpage.jumpNextPage(4)"
+                                 ng-class="{selected:testpage.currentAnswer === 4}">
+                                <div class="select-item-No">D</div>
+                                {{testpage.currentQuestion.options[3].content}}
+                            </div>
+                        </div>
+                        <!--&lt;!&ndash;多选题&ndash;&gt;-->
+                        <!--<div  ng-style="testpage.answerBox[1]">-->
+                            <!--<div class="col-xs-12">-->
+                                <!--<label class="select-item">-->
+                                    <!--<div class="select-item-No">A</div>-->
+                                    <!--<input type="checkbox" name="selectItem-radio"-->
+                                           <!--value="1" ng-model="testpage.currentAnswer[0]"-->
+                                           <!--style="opacity: 0;width: 0;"/>-->
+                                    <!--{{testpage.currentQuestion.options[0].content}}-->
+                                <!--</label>-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-12">-->
+                                <!--<label class="select-item">-->
+                                    <!--<div class="select-item-No">B</div>-->
+                                    <!--<input type="checkbox" name="selectItem-radio"-->
+                                           <!--value="2" ng-model="testpage.currentAnswer[1]"-->
+                                           <!--style="opacity: 0;width: 0;"/>-->
+                                    <!--{{testpage.currentQuestion.options[1].content}}-->
+                                <!--</label>-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-12">-->
+                                <!--<label class="select-item">-->
+                                    <!--<div class="select-item-No">C</div>-->
+                                    <!--<input type="checkbox" name="selectItem-radio"-->
+                                           <!--value="3" ng-model="testpage.currentAnswer[2]"-->
+                                           <!--style="opacity: 0;width: 0;"/>-->
+                                    <!--{{testpage.currentQuestion.options[2].content}}-->
+                                <!--</label>-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-12">-->
+                                <!--<label class="select-item">-->
+                                    <!--<div class="select-item-No">D</div>-->
+                                    <!--<input type="checkbox" name="selectItem-radio"-->
+                                           <!--value="4" ng-model="testpage.currentAnswer[3]"-->
+                                           <!--style="opacity: 0;width: 0;"/>-->
+                                    <!--{{testpage.currentQuestion.options[3].content}}-->
+                                <!--</label>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--填空题-->
+                        <div  ng-style="testpage.answerBox[2]">
+                            <input type="text" class="form-control" placeholder="填空"
+                                   ng-model="testpage.currentAnswer">
+                        </div>
+                        <!--简答题-->
+                        <div ng-style="testpage.answerBox[3]">
+                            <textarea class="form-control" rows="3" placeholder="答案"
+                                      ng-model="testpage.currentAnswer">
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper Pagination Start-->
+                <div class="swiper-pagination"></div>
+                <!-- Swiper Pagination End -->
+            </div>
+            <div class="btn-row" align="center">
+                <button type="button" class="btn btn-default course-test-btn" ng-disabled=testpage.previousBox ng-click="testpage.getPrevious()">向前</button>
+                <button type="button" class="btn btn-default course-test-btn" ng-disabled=testpage.laterBox ng-click="testpage.getLater()">向后</button>
+            </div>
+
+        <!--</div>-->
+    </div>
+</div>

@@ -1,0 +1,121 @@
+<div>
+    <header >
+        <div class="col-xs-12 page-top-prac">
+            <a href="#" id="return">
+                <i class="fa fa-chevron-left icon-return pull-left"></i>
+            </a>
+            <span class="page-now">{{testspecans.testTitle}}</span>
+        </div>
+    </header>
+
+    <div class="content" style="padding: 8px;">
+        <div class="ques-wrapper">
+                <!--题目以及4个选项-->
+                <div class="test-nav">
+                    <p style="font-weight: bold;">{{testspecans.questionContent}}</p>
+                </div>
+
+                <div>
+                    <label class="select-item ng-binding">
+                        <div class="select-item-No" ng-class="{selected:testspecans.questionAnswer === 'A'}">A</div>
+                        {{testspecans.questionOptions[0]}}
+                    </label>
+                </div>
+                <div>
+                    <label class="select-item ng-binding">
+                        <div class="select-item-No" ng-class="{selected:testspecans.questionAnswer === 'B'}">B</div>
+                        {{testspecans.questionOptions[1]}}
+                    </label>
+                </div>
+
+                <div>
+                    <label class="select-item ng-binding">
+                        <div class="select-item-No" ng-class="{selected:testspecans.questionAnswer === 'C'}">C</div>
+                        {{testspecans.questionOptions[2]}}
+                    </label>
+                </div>
+                <div>
+                    <label class="select-item ng-binding">
+                        <div class="select-item-No" ng-class="{selected:testspecans.questionAnswer ==='D'}">D</div>
+                        {{testspecans.questionOptions[3]}}
+                    </label>
+                </div>
+                <!--<div class="">-->
+                    <!--<div class="radio">-->
+                        <!--<label ng-cloak>-->
+                            <!--<input type="radio" disabled data-ng-model="testspecans.questionAnswer" ng-value="'A'">-->
+                            <!--A {{testspecans.questionOptions[0]}}-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <!--<div class="radio">-->
+                        <!--<label ng-cloak>-->
+                            <!--<input type="radio" disabled data-ng-model="testspecans.questionAnswer" ng-value="'B'">-->
+                            <!--B {{testspecans.questionOptions[1]}}-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <!--<div class="radio">-->
+                        <!--<label ng-cloak>-->
+                            <!--<input type="radio" disabled data-ng-model="testspecans.questionAnswer" ng-value="'C'">-->
+                            <!--C {{testspecans.questionOptions[2]}}-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <!--<div class="radio">-->
+                        <!--<label ng-cloak >-->
+                            <!--<input type="radio" disabled data-ng-model="testspecans.questionAnswer" ng-value="'D'">-->
+                            <!--D {{testspecans.questionOptions[3]}}-->
+                        <!--</label>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+
+        <hr>
+        <div class="test-nav">
+            <p style="font-weight: bold;">解析</p>
+            <p>{{testspecans.questionReason}}</p>
+        </div>
+        <hr>
+        <div class="test-nav">
+            <p style="font-weight: bold;">分析</p>
+            <p>{{testspecans.questionAnalyse}}</p>
+        </div>
+        <hr>
+        <div class="test-nav">
+            <p style="font-weight: bold;">知识点</p>
+            <p>{{testspecans.questionLabels}}</p>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div>-->
+
+    <!--<div>-->
+        <!--<span>试题分析</span>-->
+    <!--</div>-->
+
+    <!--<div class="col-xs-12 page-top-prac">-->
+        <!--<a href="#" id="return">-->
+            <!--<i class="fa fa-chevron-left icon-return pull-left"></i>-->
+        <!--</a>-->
+        <!--<span class="page-now ng-binding">试题分析</span>-->
+    <!--</div>-->
+
+
+
+
+
+
+<!--</div>-->
+

@@ -1,0 +1,79 @@
+<style>
+    .echarts {
+        width: 100%;
+        min-height:200px;
+        padding:10px;
+    }
+</style>
+<div>
+    <header >
+        <div class="col-xs-12 page-top-prac">
+            <a href="#" id="return">
+                <i class="fa fa-chevron-left icon-return pull-left"></i>
+            </a>
+            <span class="page-now">{{testanswer.testTitle}}</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="ques-wrapper">
+
+            <!-- Pie Chart Start -->
+            <div class="col-xs-12" id="practice-result" style="width: 100%;min-height:200px; padding: 8px;">
+                <ng-echarts class="col-xs-12 echarts"
+                            ec-config="testanswer.lineConfig"
+                            ec-option="testanswer.chartOptions" >
+                </ng-echarts>
+            </div>
+            <!-- Pie Chart End -->
+
+            <!-- Correct Rate Start -->
+            <div class="result-text">
+                <h5>正确率</h5>
+                <p>{{testanswer.percentage}}%</p>
+            </div>
+            <!-- Correct Rate End-->
+
+            <!-- Time&Level Start -->
+            <div class="time-difficultLevel">
+                <div class="row delRowMargin">
+                    <div class="col-xs-6">
+                        <div class="practice-time">
+                            <i class="fa fa-clock-o"></i>
+                            {{testanswer.usedTime | date:'mm:ss'}}
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="practice-level">
+                            难易程度:{{testanswer.testDifficult}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Time&Level End -->
+        </div>
+
+        <!-- Error Parsing Start -->
+        <div class="error-parsing">
+            <h6>错题解析</h6>
+            <div class="row delRowMargin">
+                <div class="col-xs-2 ques-No-wrap" ng-repeat="item in testanswer.testResult">
+                    <div class="ques-No"ng-bind="item.qid"
+                           ng-model="item.status"
+                           ng-style="testanswer.showStyle(item.status)"
+                           ng-click="testanswer.jumpAnswer(item.qid)">
+
+                        <!--<button class="ques-No"-->
+                                <!--ng-model="item.status" ng-bind="item.qid"-->
+                                <!--ng-class="testanswer.showStyle(item.status)"-->
+                                <!--ng-click="testanswer.jumpAnswer(item.qid)">-->
+                        <!--</button>-->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Error Parsing End -->
+    </div>
+</div>

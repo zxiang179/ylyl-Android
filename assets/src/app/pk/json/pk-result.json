@@ -1,0 +1,20 @@
+{
+    "result": "fail",
+    "userinfo": {
+        "success": 22,
+        "fail": 21,
+        "info": "还差30场晋级Lv2"
+    },
+    "useresult": {
+        "name": "莱月昴",
+        "success": 5,
+        "fail": 0,
+        "time": 30000
+    },
+    "opporesult": {
+        "name": "艾米利亚",
+        "success": 4,
+        "fail": 1,
+        "time": 40000
+    }
+}

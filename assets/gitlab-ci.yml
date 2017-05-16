@@ -1,0 +1,17 @@
+variables:
+  DEPLOY_SERVER: "58.198.176.54"
+  DEPLOY_DIR: "/var/html/www/yjsywebui"
+
+uitest:
+  stage: test
+  script:
+    - npm test
+
+.production:
+  stage: deploy
+  script:
+    - ssh root@DEPLOY_SERVER "if [!  -d /var/html/www/yjsywebui ];then mkdir DEPLOY_DIR; fi"
+    - rsync --delete-after webcontent/* root@DEPLOY_SERVER:DEPLOY_DIR
+  environment: production
+  tags:
+    - release*

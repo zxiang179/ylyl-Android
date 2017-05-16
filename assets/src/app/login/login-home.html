@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>一课一练</title>
+</head>
+
+    <!--加载第三方的css-->
+    <link rel="stylesheet" type="text/css" href="../../lib/bootstrap/dist/css/bootstrap-theme.min.css">
+   <link rel="stylesheet" type="text/css" href="../../lib/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="../../lib/fonts/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/css/common.css">
+   <link rel="stylesheet" type="text/css" href="../../style/css/login-reg.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/css/myself.css">
+<body ng-app="ykylLoginHome">
+
+    <div ng-view></div>
+    <script type="text/javascript" src="../../lib/angular/angular.js"></script>
+    <script type="text/javascript" src="../../lib/angular-route/angular-route.js"></script>
+
+    <script type="text/javascript" src="../../common/common.app.js"></script>
+    <script type="text/javascript" src="../../common/service/utils.ser.js"></script>
+    <script type="text/javascript" src="../../common/service/connection.ser.js"></script>
+    <script type="text/javascript" src="login-home.app.js"></script>
+
+    <script type="text/javascript" src="../dao/user/user-login-dao.ser.js"></script>
+    <script type="text/javascript" src="user-login.ctrl.js"></script>
+
+    <script type="text/javascript" src="user-sign.ctrl.js"></script>
+    <script type="text/javascript" src="../dao/user/user-sign-dao.ser.js"></script>
+
+    <script type="text/javascript" src="user-sign-info.ctrl.js"></script>
+    <script type="text/javascript" src="user-info-school.ctrl.js"></script>
+    <script type="text/javascript" src="../dao/user/user-info-dao.ser.js"></script>
+
+    <script type="text/javascript" src="../../app/self_info/selfInfo-home.app.js"></script>
+    <script type="text/javascript" src="../../app/self_info/selfInfo.ctrl.js"></script>
+
+
+
+</body>
+</html>

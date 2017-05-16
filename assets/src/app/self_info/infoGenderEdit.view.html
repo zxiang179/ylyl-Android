@@ -1,0 +1,32 @@
+
+
+	<!-- 性别修改 -->
+	<div class="infoEdit" id="sexEdit">
+		<header >
+	    <div class="col-xs-12 page-top-ques">
+	    	<a href="#/selfInfo" id="return">
+	        <i class="fa fa-chevron-left icon-return pull-left"></i>  
+				</a>
+				<span class="page-now">性别</span>
+	      <a href="#/selfInfo" class="pull-right sendBtn" ng-click="infoGenderCtrl.saveGendername()">保存</a>
+	    </div>
+  	</header>
+	  <div class="container">
+	    <div class="content-page">
+	      <div class="list-group">
+	      	<div class="list-group-item" ng-click="infoGenderCtrl.choseGender(infoGenderCtrl.gender[0])">
+	      		<div class="sex-text form-control">男</div>
+	        	<div class="myInfoSex-edit pull-right" ng-show="infoGenderCtrl.gender[0].gName==infoGenderCtrl.gNameNow">
+	        		<i class="fa fa-check"></i>  
+	        	</div>
+	        </div>
+					<div class="list-group-item" ng-click="infoGenderCtrl.choseGender(infoGenderCtrl.gender[1])">
+	      		<div class="sex-text form-control">女</div>
+	        	<div class="myInfoSex-edit pull-right" ng-show="infoGenderCtrl.gender[1].gName==infoGenderCtrl.gNameNow">
+	        		<i class="fa fa-check"></i>  
+	        	</div>
+	        </div>
+	      </div>
+	  	</div>
+	  </div>
+	</div>

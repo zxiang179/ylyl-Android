@@ -1,0 +1,85 @@
+
+  <div class="container">
+    <header>
+      <div class="row delRowMargin">
+        <div class="col-xs-12 page-top">
+        	<a href="../login/index.html" id="return">
+            <i class="fa fa-chevron-left icon-return pull-left"></i>  
+          </a>
+          <span class="page-now">个人信息</span>
+        </div>
+      </div>
+      <div class="row delRowMargin">
+        <div class="col-xs-10">
+          <div class="row delRowMargin">
+          	<div class="col-xs-10 col-sm-11 delPadd">
+              <div class="myself-info-state my-pic">
+              	我的头像
+              </div>
+            </div>
+            <div class="col-xs-2 col-sm-1">
+              <div class="img-myself img-myself-selfInfo" ng-click="selfInfoCtrl.showChange=true">
+                <img src="../../style/images/pic1.jpg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2 icon-next">
+          <i class="fa fa-angle-double-right"></i>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+	    <div class="myInfo-Related">
+	      <div class="list-group" ng-click="selfInfoCtrl.saveSelfInfo()">
+	        <a href="#/infoNameEdit" class=" list-group-item">用户名
+	        	<div class="myInfo-edit pull-right " >
+					<input class="myInfo-list" ng-model="selfInfoCtrl.user.name">
+	        		<i class="fa fa-angle-right"></i>
+				</div>
+	        </a>
+	        <div class="list-group-item">ID号
+	        	<div class="myInfo-edit pull-right">
+	        		123456 
+	        	</div>
+	        </div>
+	        <a href="#/infoPassEdit" class="list-group-item">修改密码
+	        	<div class="myInfo-edit pull-right">
+	        		<i class="fa fa-angle-right"></i>  
+	        	</div>
+	        </a>
+	      </div>
+        </div>
+	    <div class="myInfo-Related">
+	      <div class="list-group" ng-click="selfInfoCtrl.saveSelfInfo()">
+	        <a href="#/infoGenderEdit" class="list-group-item">性别
+				<div class="myInfo-edit pull-right" >
+					<input class="myInfo-list" ng-model="selfInfoCtrl.user.genderName">
+	        		<i class="fa fa-angle-right"></i>
+	        	</div>
+	        </a>
+	        <a href="#/infoGradeEdit" class="list-group-item">年级
+	        	<div class="myInfo-edit pull-right" >
+					<input class="myInfo-list" ng-model="selfInfoCtrl.user.gradeName">
+					<i class="fa fa-angle-right"></i>
+	        	</div>
+	        </a>
+	        <a href="#/school" class="list-group-item">学校
+	        	<div class="myInfo-edit pull-right" >
+					<input class="myInfo-list" ng-model="selfInfoCtrl.user.school">
+	        		<i class="fa fa-angle-right"></i>
+	        	</div>
+	        </a>
+	      </div>
+	    </div>
+  	</div>
+  	
+  </div>
+  <div class="img-model-mask" ng-show="selfInfoCtrl.showChange">
+	  <div class="img-model">
+	  	<a href="#" class="list-group-item open-camara-btn">拍照</a>
+			<a href="infoPhotoEdit.html" class="list-group-item open-photo-btn">从相册选择</a>
+			<div class="list-group-item cancel-Btn" ng-click="selfInfoCtrl.showChange=false">取消</div>
+	  </div>
+	</div>
+

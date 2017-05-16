@@ -1,0 +1,58 @@
+<div class="container-fluid form-horizontal">
+
+    <div class="form-group">
+        <label>
+            年级
+            <select class="form-control" data-ng-model="tmtagsubmit.selectedGrade" ng-change="tmtagsubmit.selectGrade()">
+                <option ng-repeat="item in tmtagsubmit.gradeList" value={{item.id}}>{{item.name}}</option>
+            </select>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            课程
+            <select class="form-control" data-ng-model="tmtagsubmit.selectedSubject" ng-change="tmtagsubmit.selectSubject()">
+                <option ng-repeat="item in tmtagsubmit.subjectList" value={{item.id}}>{{item.name}}</option>
+            </select>
+        </label>
+    </div>
+    <!--<div class="form-group">-->
+        <!--<label>-->
+            <!--知识点-->
+            <!--<select class="form-control" data-ng-model="tmtagsubmit.selectedKnPoint">-->
+                <!--<option  ng-repeat="item in tmtagsubmit.knPointList" value={{item.id}}>-->
+                    <!--{{item.name}}-->
+                <!--</option>-->
+            <!--</select>-->
+        <!--</label>-->
+    <!--</div>-->
+    <div class="form-group">
+        <label>
+            知识点
+        </label><br>
+        <div class="btn-group" uib-dropdown auto-close="disabled">
+            <button id="simple-btn-keyboard-nav" type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle>
+                <b>请选择&nbsp&nbsp</b><span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu>
+                <li ng-repeat="item in tmtagsubmit.knPointList">
+                    <div class="form-group">
+                        <b class="col-sm-5 col-sm-offset-1">{{item.name}}</b>
+                        <button class="btn btn-danger btn-sm col-sm-4 col-sm-offset-1" ng-click="tmtagsubmit.deleteKnPoint(item)">DELE</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="input-group">
+                        <input type="text" ng-model="tmtagsubmit.knPointAddText" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="tmtagsubmit.addKnPoint()">ADD</button>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <p ng-click="tmtagsubmit.test()">test</p>
+</div>
+
+

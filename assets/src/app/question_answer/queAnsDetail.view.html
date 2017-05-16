@@ -1,0 +1,160 @@
+<style>
+    .queCenter{
+        position: relative;
+        margin-top: 50px;
+    }
+
+    .choseFilter{
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        height:100%;
+
+    }
+    .mainPage{
+        position: absolute;
+        z-index: 100;
+    }
+    .rightList{
+        opacity: 1;
+        position: relative;
+        float: right;
+        width: 40%;
+        height: 100%;
+        background-color: white;
+        top: 0px;
+    }
+    .left{
+        position: relative;
+        float: left;
+        width: 60%;
+        height: 100%;
+        opacity: 0.5;
+        background-color: white;
+    }
+    .container{
+        width: 100%;
+        height:100%;
+    }
+    .btn{
+        position: relative;
+        margin-top: 50px;
+        right: -180%;
+    }
+    .form-group {
+        margin-bottom: 60px;
+    }
+    .form-group label {
+        margin-top: 26px;
+    }
+</style>
+
+<div class="container mainPage"  >
+    <header >
+        <div class="col-xs-12 page-top-ques">
+            <a href="#/" >
+                <i class="fa fa-chevron-left icon-return pull-left"></i>
+            </a>
+            <span class="page-now">问答中心</span>
+
+            <a  href="#/ansDetail" class="pull-right sendBtn"  >回复</a>
+        </div>
+    </header>
+    <div class="content">
+
+      <!--  <div class="form-group">
+
+            <div class="col-xs-8 delPadd">
+                <input class="form-control" id="schoolSelect" placeholder="" value="{{queAnsCtrl.filterCondition.filterGrades +'  '+ queAnsCtrl.filterCondition.filterSubject }}" >
+            </div>
+            <a for="schoolSelect" class="col-xs-3 control-label" ng-click="queAnsCtrl.isFilterShow=true">筛选</a>
+        </div>-->
+
+        <div class="mainContent">
+
+            <div class="queAnsCenter"  >
+                <div class="queCenter">
+                    <div class="img-myself" style="display: inline-block" >
+                        <img src="{{queAnsDetailCtrl.queDetail.userPhoto}}"/>
+                    </div>
+                    <span style="width: 20%">{{queAnsDetailCtrl.queDetail.username}}</span>
+                    <div style="float: right">
+                        <a >评论</a>
+                        <span >{{queAnsDetailCtrl.queDetail.commentCount}}</span>
+                    </div>
+                    <p>{{queAnsDetailCtrl.queDetail.question}}</p>
+
+                  <p>{{queCenter.question}}</p>
+                    <div class="tag-place">
+                        <span>{{queAnsDetailCtrl.queDetail.gradeTag}}</span>
+                        <span>{{queAnsDetailCtrl.queDetail.subTag}}</span>
+                    </div>
+                </div>
+                <div class="ansCenter" >
+                    <div class="answer" ng-repeat="answer in queAnsDetailCtrl.answerContent">
+                        <div class="img-myself" style="display: inline-block" >
+                            <img src="{{answer.cmePhoto}}"/>
+                        </div>
+                        <span style="width: 20%">{{answer.cmeName}}</span>
+                        <div style="float: right" ng-show="!queAnsDetailCtrl.isSupported">
+                            <a  ng-click="answer.supportCount=answer.supportCount+1;queAnsDetailCtrl.isSupported=true;queAnsDetailCtrl.updateSupport(answer.supportCount)">点赞</a>
+                            <span >{{answer.supportCount}}</span>
+                        </div>
+                        <div style="float: right" ng-show="queAnsDetailCtrl.isSupported">
+                            <span style="color: red">点赞</span>
+                            <span >{{answer.supportCount}}</span>
+                        </div>
+                        <p>答题内容</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<!--
+<div class="container choseFilter" ng-show="queAnsCtrl.isFilterShow">
+    <div class="left"></div>
+    <div class="rightList" >
+        <div class="form-group">
+            <label  style="display: block" class=" control-label">科目</label>
+            <div class=" delPadd radio-btn-group">
+                <div ng-repeat="sub in queAnsCtrl.subjectList" ng-show="queAnsCtrl.subShow==sub.id">
+                    <div class="col-xs-4 radio-btn" ng-repeat="subContent in sub.subjectContent"  >
+                        <label class="label-backcolor ">
+                            <div class="radio-select" ng-class="{selected:subContent===queAnsCtrl.subSelected}" ng-click="queAnsCtrl.selectedSubject(subContent)">
+                                <input type="radio"  value="{{subContent}}"   name="{{subContent}}">{{subContent}}
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div  class="form-group">
+            <label  style="display: block ;width: 100%" class=" control-label">年级</label>
+            <div class=" delPadd radio-btn-group">
+                <div class="col-xs-4 radio-btn" ng-repeat="grade in queAnsCtrl.grades"  >
+                    <label class="label-backcolor ">
+                        <div class="radio-select" ng-class="{selected:grade===queAnsCtrl.gradeSelected}" ng-click="queAnsCtrl.selectedGrade(grade.id)">
+                            <input type="radio"  value="{{grade.gradeName}}"   name="{{grade.gradeName}}">{{grade.gradeName}}
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-4 delPadd ">
+                <button class="btn " style="background-color: #00b3ee" ng-click="queAnsCtrl.getQueFilterContent()">确定</button>
+            </div>
+        </div>
+    </div>
+
+</div>-->

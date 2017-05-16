@@ -1,0 +1,36 @@
+<div>
+
+    <header>
+        <div class="col-xs-12 page-top-prac">
+            <a href="../login/index.html" >
+                <i class="fa fa-chevron-left icon-return pull-left"></i>
+            </a>
+            <span class="page-now">{{pkmenu.moduleTitle}}</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="subject-total">
+            <div class="sub-nav">
+                <h5>{{pkmenu.advertise}}</h5>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <span class="col-xs-4"
+                 ng-repeat="item in pkmenu.subjectList"
+                 data-ng-click="pkmenu.jumpWaitingHall(item.id)" style="text-align:center">
+                <img class="img-responsive icon-subject"
+                     data-ui-lazyload="{{item.icon}}" alt="{{item.name}}"
+                />
+                <label>{{item.name}}</label>
+            </span>
+        </div>
+
+        <div class="btn-row" align="center">
+            <button type="button" class="btn btn-default course-test-btn " ng-click="testpage.getPrevious()">历史战绩</button>
+            <button type="button" class="btn btn-default course-test-btn" ng-click="testpage.getLater()">PK榜</button>
+        </div>
+
+    </div>
+</div>

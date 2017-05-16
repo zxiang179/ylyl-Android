@@ -1,0 +1,93 @@
+<div>
+
+    <header>
+        <div class="col-xs-12 page-top-prac">
+            <a href="../login/index.html" >
+                <i class="fa fa-chevron-left icon-return pull-left"></i>
+            </a>
+            <span class="page-now">{{testmenu.moduleTitle}}</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <!-- nav start -->
+        <div class="subject-total">
+            <div class="sub-nav">
+                <ul class="nav nav-tabs tabs-redefine fade in" id="myTab">
+                    <li role="presentation" ng-repeat="item in testmenu.subjectList"
+                        data-ng-click="testmenu.getSubjectContent(item.id)">
+                        <a>{{item.sbName}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="more-btn">
+                <i class="fa fa-chevron-down pull-right"></i>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane active">
+                <h5>{{testmenu.subjectTitle}}</h5>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-xs-9 random-test">
+                                <div class="random-test-title">随机测试</div>
+                            </div>
+                            <div class="col-xs-3" style="border-left: 1px solid #ddd;">
+                                <button class="btn btn-default course-test-btn"
+                                        ng-click="testmenu.jumpTestPage(testmenu.subjectId, 'random')">
+                                    开始
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item" ng-repeat="test in testmenu.subjectContent">
+                        <div class="row">
+                            <div class="course-test-title">
+                                <p>{{test.kpName}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <div class="course-test">
+                                    <div class="exam-result">
+                                        <div class="row">
+                                            <div class="col-xs-4 exam-result-item">
+                                                <div class="col-xs-12 delPadd exam-result-num">{{test.kpCount}}</div>
+                                                <div class="col-xs-12 delPadd">总题量</div>
+                                            </div>
+                                            <div class="col-xs-4 exam-result-item">
+                                                <div class="col-xs-12 delPadd exam-result-num">{{test.finished}}</div>
+                                                <div class="col-xs-12 delPadd">已完成</div>
+                                            </div>
+                                            <div class="col-xs-4 exam-result-item">
+                                                <div class="col-xs-12 delPadd exam-result-num exam-result-underway">{{test.unfinished}}</div>
+                                                <div class="col-xs-12 delPadd">未完成</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3" style="border-left: 1px solid #ddd;">
+                                <button class="btn btn-default course-test-btn"
+                                        ng-click="testmenu.jumpTestPage(test.kpId, 'normal')">
+                                    开始
+                                </button>
+                                <button class="btn btn-default course-test-btn"
+                                        ng-click="testmenu.jumpResetedTestPage(test.kpId)">
+                                    清空
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

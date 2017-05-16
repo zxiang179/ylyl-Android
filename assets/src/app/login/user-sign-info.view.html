@@ -1,0 +1,73 @@
+<header>
+    <div class="col-xs-12 page-top-reg">
+        <a href="#/sign" id="return">
+            <i class="fa fa-chevron-left icon-return pull-left"></i>
+        </a>
+        <span class="page-now">个人信息</span>
+    </div>
+</header>
+<div class="content">
+    <form action=" " class="form-horizontal selfInfo-form" role="form" name="selfInfo-form">
+
+        <div class="form-group">
+            <label for="username" class="col-xs-3 control-label">用户名</label>
+            <div class="col-xs-8 delPadd">
+                <input type="text" class="form-control" id="username" placeholder="请输入名字" ng-model="userSignInfoCtrl.usernameInput"
+                    maxlength="20"   ng-focus="userSignInfoCtrl.changeState()">
+            </div>
+            <div class="warning col-xs-10" ng-if="userLoginCtrl.usenameError ">用户名已存在</div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-8 delPadd">
+                <div class="radio-btn-group">
+                    <div class="col-xs-6 radio-btn "
+                        >
+                        <label class="label-backcolor "  >
+                            <div class="radio-select" ng-class="{selected:userSignInfoCtrl.gender[0]===userSignInfoCtrl.genderSelected}"
+                                 ng-click="userSignInfoCtrl.selectedGender(0)">
+                                <input type="radio" name="sex" value="男" >男
+                            </div>
+                        </label>
+                    </div>
+
+
+                    <div class="col-xs-6 radio-btn">
+                        <label class="label-backcolor">
+                            <div class="radio-select" ng-class="{selected:userSignInfoCtrl.gender[1]===userSignInfoCtrl.genderSelected}"
+                                 ng-click="userSignInfoCtrl.selectedGender(1)">
+                                <input type="radio" name="sex" value="女">女
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="schoolSelect" class="col-xs-3 control-label">学校</label>
+            <a   href="#/school"
+                 ng-click="userSignInfoCtrl.saveUserData(userSignInfoCtrl.usernameInput,userSignInfoCtrl.genderSelected.id,userSignInfoCtrl.genderSelected.gName,userSignInfoCtrl.gradeSelected.id,userSignInfoCtrl.gradeSelected.gradeName)">
+                <div class="col-xs-8 delPadd">
+                    <input class="form-control" id="schoolSelect" placeholder="点击选择学校" ng-model="userSignInfoCtrl.schoolName">
+                    <i class="fa fa-angle-double-right school-set"></i>
+                </div>
+            </a>
+        </div>
+        <div class="form-group">
+            <label for="username" class="col-xs-3 control-label">年级</label>
+            <div class="col-xs-8 delPadd radio-btn-group">
+                <div class="col-xs-4 radio-btn" ng-repeat="grade in userSignInfoCtrl.grades"   >
+                    <label class="label-backcolor ">
+                        <div class="radio-select" ng-class="{selected:grade===userSignInfoCtrl.gradeSelected}" ng-click="userSignInfoCtrl.selectedGrade(grade.id)">
+                            <input type="radio" name="grade" value="{{grade.gradeName}}"   name="{{grade.gradeName}}">{{grade.gradeName}}
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-action">
+            <div class="col-xs-12 delPadd btn-begin">
+                <button type="submit" class="btn btn-col col-xs-12"  ng-click="userSignInfoCtrl.saveUserAllInfo()">开始使用</button>
+            </div>
+        </div>
+    </form>
+</div>
